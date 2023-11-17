@@ -2,9 +2,9 @@ const express=require('express')
 const Teacher=require('../model/teacher')
 exports.createTeacher=async (req,res)=>{
     try{
-        const teacher=new Teacher(req.body)
-        await teacher.save()
-        res.status(200).json({msg:"Teacher has been created succesfully",teacher}) 
+        const teacherNew=new Teacher(req.body)
+        await teacherNew.save()
+        res.status(200).json({msg:"Teacher has been created succesfully",teacherNew}) 
     }
     catch(error){
         res.status(404).json({msg:"Error",error})
