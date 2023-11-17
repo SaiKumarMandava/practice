@@ -1,0 +1,22 @@
+const express=require('express')
+const dotenv=require('dotenv')
+const connectDB=require("./configure/db")
+const Student = require('./server/ruter/student')
+const Teacher=require('./server/ruter/teacher')
+const Placement=require('./server/ruter/placement')
+const admin=require('./server/ruter/admin')
+const cors=require('cors')
+const app=express()
+dotenv.config()
+
+const port=8000
+app.listen(port,()=>{
+    console.log(`listening to the port ${port}`)
+})
+connectDB()
+app.use(express.json())
+app.use(cors())
+app.use('/api',Student)
+app.use('/api',Teacher)
+app.use('/api',Placement)
+app.use('/api',admin)
