@@ -6,7 +6,7 @@ Just Practising Github from organisation POint of View
 
 
 
-#adding and deleting element by suing dom
+#adding and deleting element by using dom
 <!DOCTYPE html>
 <html lang="en">
 
